@@ -1,0 +1,9 @@
+.time {
+  text-align: center;
+  margin: auto;
+  font-size: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+}

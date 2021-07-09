@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css");
+
+ul {
+  list-style: disc;
+}
+
+.chat-main {
+  display: grid;
+}
+
+.chat-sidebar {
+  color: black;
+  padding: 20px 20px 60px;
+}
+
+.chat-sidebar h2 {
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.chat-sidebar h3 {
+  margin-bottom: 15px;
+}
+
+.chat-sidebar ul li {
+  padding: 10px 0;
+}
+
+@media (max-width: 700px) {
+  .chat-main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .chat-sidebar {
+    margin-bottom: 20px;
+  }
+}
+
+.slide-right {
+  width: 100%;
+  margin: auto;
+}
+
+.slide-right h5 {
+  animation-iteration-count: infinite;
+  animation: slide-right 5s infinite;
+  transform: translateX(-100%);
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(0);
+  }
+}
+
+div.at-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.at-item {
+  color: #3079ed;
+  animation-name: slide-in-bck-bottom;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+@keyframes slide-in-bck-bottom {
+  0% {
+    -webkit-transform: translateZ(700px) translateY(300px);
+    transform: translateZ(700px) translateY(300px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}

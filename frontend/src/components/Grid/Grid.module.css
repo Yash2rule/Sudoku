@@ -1,0 +1,123 @@
+.Board {
+  display: flex;
+  padding-top: 50px;
+}
+
+.Table {
+  height: 0%;
+  width: 25%;
+  font-size: 1.8em;
+  margin: auto;
+  border: 3px solid rgb(2, 37, 35);
+  border-collapse: collapse;
+}
+
+@media screen and (max-width: 1080px) {
+  .Board {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .Table {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .Table {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Table {
+    width: 90%;
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .Table {
+    width: 95%;
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .Table {
+    width: 100%;
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .Table {
+    width: 100%;
+    font-size: 1.1em;
+  }
+}
+
+.TableData {
+  height: 1.5em;
+  width: 1.5em;
+  border: 1px solid #ccc;
+  text-align: center;
+  outline: none;
+}
+
+.TableData .Input {
+  font-size: 1em;
+  height: 1.5em;
+  width: 1.5em;
+  border: none;
+  margin: 0;
+  text-align: center;
+  outline: none;
+  color: #b34700;
+}
+
+.TableData .Input:focus {
+  background-color: rgb(1, 56, 15);
+  color: white;
+  cursor: none;
+}
+
+.Conflict {
+  font-size: 1em;
+  height: 1.5em;
+  width: 1.5em;
+  border: none;
+  margin: 0;
+  text-align: center;
+  outline: none;
+}
+.Conflict:focus {
+  background-color: rgb(212, 5, 5);
+  color: white;
+  cursor: none;
+}
+
+.TableData:nth-child(3n) {
+  border-right: 3px solid rgb(2, 37, 35);
+}
+
+.TableRow:nth-child(3n) {
+  border-bottom: 3px solid rgb(2, 37, 35);
+}
+
+.TableDiv {
+  background-color: black;
+  color: white;
+}
+
+.TableEmpty {
+  font-size: 1em;
+  height: 1.5em;
+  width: 1.5em;
+  border: none;
+  margin: 0;
+  text-align: center;
+  outline: none;
+  color: #b34700;
+}
