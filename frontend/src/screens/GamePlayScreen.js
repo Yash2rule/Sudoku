@@ -16,7 +16,7 @@ class GamePlayScreen extends Component {
     puzzle: JSON.parse(localStorage.getItem("gameState")),
     activeElementPosition: [0, 0],
     difficulty:"easy",
-    socket:io("localhost:5000"),
+    socket:io("http://localhost:5000"),
     message:'',
     name:Qs.parse(this.props.location.search).name,
     room:Qs.parse(this.props.location.search).room,
