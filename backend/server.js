@@ -4,7 +4,7 @@ const path = require('path');
 const socketio = require('socket.io');
 const http = require('http');
 const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./users')
-dotenv.config();
+dotenv.config({path: '../.env'});
 
 const app = express();
 const server = http.createServer(app);
