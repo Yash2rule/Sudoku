@@ -4,22 +4,17 @@ const path = require('path');
 const socketio = require('socket.io');
 const http = require('http');
 const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./users')
+dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
-dotenv.config();
-app.use(require('cors')())
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.join(__dirname,'/frontend/build')));
-    app.get('*',(req,res) => {
-        res.sendFile(path.resolve(__dirname,'frontend','build','index.html'))
-    })
-}
+app.use(require('cors')())
+app.use(express.json());
 
 const io = socketio(server,{
     cors: {
-        origin: "http://localhost:3000"
+        origin: "*"
     }
 });
 
@@ -56,6 +51,13 @@ io.on('connection',(socket) => {
         }
     })
 })
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static(path.join(__dirname,'/frontend/build')));
+    app.get('*',(req,res) => {
+        res.sendFile(path.resolve(__dirname,'frontend','build','index.html'))
+    })
+}
 
 const PORT = 5000 || process.env.PORT;
 server.listen(PORT,() => console.log(`Server running on port ${PORT}`));
