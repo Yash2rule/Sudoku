@@ -4,20 +4,13 @@ const path = require('path');
 const socketio = require('socket.io');
 const http = require('http');
 const { userJoin, getCurrentUser, userLeave, getRoomUsers } = require('./users')
-dotenv.config({path: '../.env'});
+dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 
 app.use(require('cors')())
 app.use(express.json());
-
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.join(__dirname,'../frontend/build')));
-    app.get('*',(req,res) => {
-        res.sendFile(path.join(__dirname,'../frontend/build/index.html'))
-    })
-}
 
 const io = socketio(server,{
     cors: {
@@ -58,6 +51,13 @@ io.on('connection',(socket) => {
         }
     })
 })
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static(path.join(__dirname,'../frontend/build')));
+    app.get('/',(req,res) => {
+        res.sendFile(path.join(__dirname,'../frontend/build/index.html'))
+    })
+}
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT,() => console.log(`Server running on port ${PORT}`));
