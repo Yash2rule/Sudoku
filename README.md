@@ -26,14 +26,16 @@ cd frontend
 npm install
 ```
 
+### Run
 ```
+# Run backend (:5000) (stay in the root folder to run this command)
+npm run start
+
 # Run frontend (:3000) 
 cd frontend
 npm run start
-
-# Run backend (:5000) (stay in the root folder to run this command)
-npm run start
 ```
+Note: Run backend first and then frontend
 
 ### Build & Deploy
 
